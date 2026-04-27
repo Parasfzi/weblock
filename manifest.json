@@ -23,15 +23,11 @@
   "action": {
     "default_popup": "popup.html",
     "default_title": "Site Locker Settings",
-    "default_icon": {
-      "16": "assets/icon-16.png",
-      "48": "assets/icon-48.png",
-      "128": "assets/icon-128.png"
-    }
+    "default_icon": "assets/icon.svg"
   },
   "icons": {
-    "16": "assets/icon-16.png",
-    "48": "assets/icon-48.png",
-    "128": "assets/icon-128.png"
+    "16": "assets/icon.svg",
+    "48": "assets/icon.svg",
+    "128": "assets/icon.svg"
   }
 }
