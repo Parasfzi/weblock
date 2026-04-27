@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Site Locker</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <svg class="icon-small" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+      </svg>
+      Site Locker
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="focus-mode-toggle" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <div id="setup-view" class="view hidden">
+    <h2>Welcome to Site Locker</h2>
+    <p>Set a master password to secure your focused websites.</p>
+    <div class="input-group">
+      <input type="password" id="new-password" placeholder="Enter new password">
+    </div>
+    <div class="input-group">
+      <input type="password" id="confirm-password" placeholder="Confirm password">
+    </div>
+    <button id="save-setup-btn" class="primary-btn">Set Password</button>
+    <div id="setup-error" class="error"></div>
+  </div>
+
+  <div id="main-view" class="view hidden">
+    <div class="current-site-section">
+      <p id="current-hostname" class="hostname">loading...</p>
+      <button id="toggle-current-site-btn" class="secondary-btn">Lock This Site</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="locked-sites-section">
+      <h3>Locked Sites</h3>
+      <div class="add-site-group">
+        <input type="text" id="manual-site-input" placeholder="e.g. instagram.com">
+        <button id="add-manual-site-btn" class="icon-btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+        </button>
+      </div>
+      <ul id="locked-sites-list" class="sites-list">
+        <!-- List items injected via JS -->
+      </ul>
+    </div>
+    
+    <div class="footer-actions">
+      <button id="reset-password-btn" class="text-btn">Change Password</button>
+    </div>
+  </div>
+
+  <div id="change-password-view" class="view hidden">
+    <h2>Change Password</h2>
+    <p>Enter your current password to set a new one.</p>
+    <div class="input-group">
+      <input type="password" id="old-password" placeholder="Enter current password">
+    </div>
+    <div class="input-group">
+      <input type="password" id="change-new-password" placeholder="Enter new password">
+    </div>
+    <div class="input-group">
+      <input type="password" id="change-confirm-password" placeholder="Confirm new password">
+    </div>
+    <button id="save-change-pwd-btn" class="primary-btn">Update Password</button>
+    <button id="cancel-change-pwd-btn" class="secondary-btn" style="margin-top: 8px; width: 100%;">Cancel</button>
+    <div id="change-pwd-error" class="error"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
